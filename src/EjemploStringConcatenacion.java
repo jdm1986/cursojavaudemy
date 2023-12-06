@@ -1,4 +1,4 @@
-public class EjemploStringContatenacion {
+public class EjemploStringConcatenacion {
     public static void main(String[] args) {
 
         String curso = "Programación Java";
