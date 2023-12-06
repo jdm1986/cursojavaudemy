@@ -11,7 +11,8 @@ public class AutoBoxingInteger {
 
         for (Integer i:
              enteros) {
-            if(i.intValue()%2 == 0){
+            if(i.intValue()%2 == 0){ //también solo i%2 porque java lo implementa de forma implícta
+
                 suma+= i.intValue();
                 listaDinamica.add(i);
             }
