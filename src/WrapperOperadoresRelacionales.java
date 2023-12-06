@@ -1,5 +1,3 @@
-package Ejercicios;
-
 public class WrapperOperadoresRelacionales {
     public static void main(String[] args) {
 
