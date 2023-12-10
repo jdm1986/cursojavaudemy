@@ -30,7 +30,8 @@ public class Arreglos05ForInversoOrdenamientoBurbuja {
         int contador = 0;
 
         for (int i = 0; i<totalIteraciones-1;i++){
-            for (int j = 0;j<totalIteraciones-1;j++){
+
+            for (int j = 0;j<totalIteraciones-1-i;j++){
                 if(productos[j].compareTo(productos[j+1])>0){
 
                     String auxiliar = productos[j];
