@@ -2,7 +2,7 @@ package Parte2.Ejercicios;
 
 import javax.swing.*;
 
-public class OrdenarArrayBurbuja {
+public class OrdenarArrayBurbujaConCuadroDialogo {
     public static void main(String[] args) {
 
 
