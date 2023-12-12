@@ -47,6 +47,9 @@ public class Arreglos11NotasAlumnos {
         System.out.println("Ingresa el número del alumno (de 0 - 6)");
         int id = scanner.nextInt();
         double promedioAlumno = (claseMatematicas[id]+claseHistoria[id]+claseLenguaje[id])/3;
+        System.out.println("Nota Matemáticas de alumno " + id + " = " + claseMatematicas[id]);
+        System.out.println("Nota Historia de alumno " + id + " = " + claseHistoria[id]);
+        System.out.println("Nota Lengua de alumno " + id + " = " + claseLenguaje[id]);
         System.out.println("Promedio alumno " + id + " es igual a: " + promedioAlumno);
 
 
