@@ -1,5 +1,6 @@
 package Parte2.Ejercicios;
 
+import javax.swing.plaf.synth.SynthOptionPaneUI;
 import java.util.Arrays;
 
 public class OrdenarArrayDeLaFormaUltimoPrimero {
@@ -11,6 +12,14 @@ public class OrdenarArrayDeLaFormaUltimoPrimero {
         for (int i = 0;i<arregloA.length/2;i++){
             System.out.println(arregloA[auxiliar] + " : "+arregloA[i]);
             auxiliar--;
+        }
+
+        int [] arregloB = {1,2,3,4,5,6,7,8,9,10};
+
+        for (int i = 0;i<arregloB.length/2;i++){
+            System.out.print(arregloB[9-i] + " : ");
+            System.out.println(arregloB[i]);
+
         }
 
     }
