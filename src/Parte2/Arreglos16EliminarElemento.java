@@ -26,7 +26,7 @@ public class Arreglos16EliminarElemento {
 
         int [] nuevoArreglo = new int[arreglo.length-1];
 
-        //haciendo copia de arreglo usando la clase System.
+        //haciendo copia de arreglo usando la clase System..
 
         System.arraycopy(arreglo,0,nuevoArreglo,0,nuevoArreglo.length);
 
