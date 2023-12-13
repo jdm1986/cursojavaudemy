@@ -16,10 +16,18 @@ public class Arreglos17InsertandoElementoMoviendoLosSiguientes {
         System.out.println("ArrayA = " + Arrays.toString(arrayA));
 
         for (int i = 0; i < arrayB.length - 1; i++) {
-            arrayB[i] = arrayA[i];
+            if (i < posicion) {
+                arrayB[i] = arrayA[i];
+            } else if (i == posicion) {
+                arrayB[i] = nuevoElemento;
+                arrayB[i+1] = arrayA[i];
+            } else  {
+                arrayB[i+1] = arrayA[i];
+            }
 
         }
         System.out.println("ArrayB = " + Arrays.toString(arrayB));
     }
 
 }
+//
