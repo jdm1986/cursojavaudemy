@@ -18,11 +18,11 @@ public class Arreglos17InsertandoElementoMoviendoLosSiguientes {
         for (int i = 0; i < arrayB.length - 1; i++) {
             if (i < posicion) {
                 arrayB[i] = arrayA[i];
-            } else if (i == posicion) {
-                arrayB[i] = nuevoElemento;
-                arrayB[i+1] = arrayA[i];
-            } else  {
-                arrayB[i+1] = arrayA[i];
+            } else {
+                if (i == posicion) {
+                    arrayB[i] = nuevoElemento;
+                }
+                arrayB[i + 1] = arrayA[i];
             }
 
         }
