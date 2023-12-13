@@ -13,18 +13,13 @@ public class Arreglos17InsertandoElementoMoviendoLosSiguientes {
         int nuevoElemento = 20;
         int posicion = 2;
         int[] arrayB = new int[arrayA.length + 1];
+        System.out.println("ArrayA = " + Arrays.toString(arrayA));
 
-        System.arraycopy(arrayA, 0, arrayB, 0, arrayA.length);
+        for (int i = 0; i < arrayB.length - 1; i++) {
+            arrayB[i] = arrayA[i];
 
-        System.out.println(Arrays.toString(arrayB));
-
-        for (int i = arrayA.length - 1; i >= posicion; i--) {
-            arrayB[i + 1] = arrayA[i];
         }
-        arrayB[posicion] = nuevoElemento;
-
-        System.out.println(Arrays.toString(arrayB));
-
+        System.out.println("ArrayB = " + Arrays.toString(arrayB));
     }
 
 }
