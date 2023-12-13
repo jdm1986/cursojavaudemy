@@ -1,6 +1,6 @@
 package Parte2.Ejercicios;
 
-public class ImprimirNumeroMasAltoDelArray {
+public class T14ImprimirNumeroMasAltoDelArray {
     public static void main(String[] args) {
 
         int[] arrayA = {14, 33, 15, 36, 78, 21, 43};
