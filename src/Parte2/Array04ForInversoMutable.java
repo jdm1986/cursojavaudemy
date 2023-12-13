@@ -1,9 +1,8 @@
 package Parte2;
 
 import java.util.Arrays;
-import java.util.Collections;
 
-public class Arreglos04ForInversoMutable {
+public class Array04ForInversoMutable {
     public static void arregloInverso (String[] arreglo){
         System.out.println(">>>>>>>>>>>>>>>>================MUTANDO ARRAY==========<<<<<<<<<<<<<<<<<<<<");
 

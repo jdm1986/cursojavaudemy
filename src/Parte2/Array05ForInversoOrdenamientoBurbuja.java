@@ -2,7 +2,7 @@ package Parte2;
 
 import java.util.Arrays;
 
-public class Arreglos05ForInversoOrdenamientoBurbuja {
+public class Array05ForInversoOrdenamientoBurbuja {
     /*public static void arregloInverso (String[] arreglo){
         System.out.println(">>>>>>>>>>>>>>>>================MUTANDO ARRAY==========<<<<<<<<<<<<<<<<<<<<");
 

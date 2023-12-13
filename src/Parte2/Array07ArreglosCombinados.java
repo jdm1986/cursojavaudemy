@@ -2,7 +2,7 @@ package Parte2;
 
 import java.util.Arrays;
 
-public class Arreglos07ArreglosCombinados {
+public class Array07ArreglosCombinados {
     public static void main(String[] args) {
 
         int[] a, b, c;

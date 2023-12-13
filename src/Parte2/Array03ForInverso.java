@@ -2,7 +2,7 @@ package Parte2;
 
 import java.util.Arrays;
 
-public class Arreglos03ForInverso {
+public class Array03ForInverso {
     public static void main(String[] args) {
 
         //String[] productos = new String[7];//recuerda, los valores por defecto serían null por defecto si no se pobla.

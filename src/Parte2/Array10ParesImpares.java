@@ -1,10 +1,9 @@
 package Parte2;
 
-import java.lang.reflect.Array;
 import java.util.Arrays;
 import java.util.Scanner;
 
-public class Arreglos10ParesImpares {
+public class Array10ParesImpares {
     public static void main(String[] args) {
 
         Scanner scanner = new Scanner(System.in);

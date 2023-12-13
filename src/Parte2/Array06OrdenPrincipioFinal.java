@@ -2,7 +2,7 @@ package Parte2;
 
 import java.util.Arrays;
 
-public class Arreglos06OrdenPrincipioFinal {
+public class Array06OrdenPrincipioFinal {
     public static void main(String[] args) {
 
         int[] numeros = new int[10];

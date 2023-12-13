@@ -1,10 +1,8 @@
 package Parte2;
 
-import javax.swing.table.AbstractTableModel;
 import java.util.Arrays;
-import java.util.Scanner;
 
-public class Arreglos17InsertandoElementoMoviendoLosSiguientes {
+public class Array17InsertandoElementoMoviendoLosSiguientes {
 
     public static void main(String[] args) {
 //un solo bucle

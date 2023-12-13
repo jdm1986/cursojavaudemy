@@ -2,7 +2,7 @@ package Parte2;
 
 import java.util.Scanner;
 
-public class Arreglos13BuscarString {
+public class Array13BuscarString {
     public static void main(String[] args) {
 
         String[] arregloStrings = new String[4];

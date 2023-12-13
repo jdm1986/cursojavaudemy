@@ -2,7 +2,7 @@ package Parte2;
 
 import java.util.Arrays;
 
-public class Arreglos02ForIterando {
+public class Array02ForIterando {
     public static void main(String[] args) {
 
         String[] productos = new String[7];//recuerda, los valores por defecto serían null por defecto si no se pobla.

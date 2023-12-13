@@ -1,10 +1,8 @@
 package Parte2;
 
-import java.lang.reflect.Array;
-import java.util.Arrays;
 import java.util.Scanner;
 
-public class Arreglos11NotasAlumnos {
+public class Array11NotasAlumnos {
     public static void main(String[] args) {
 
         double sumaNotasMatematicas = 0;

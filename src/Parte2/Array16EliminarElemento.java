@@ -3,7 +3,7 @@ package Parte2;
 import java.util.Arrays;
 import java.util.Scanner;
 
-public class Arreglos16EliminarElemento {
+public class Array16EliminarElemento {
     public static void main(String[] args) {
 
         int [] arreglo = new int[10];

@@ -3,7 +3,7 @@ package Parte2;
 import java.util.Arrays;
 import java.util.Scanner;
 
-public class Arreglos15InsertarElementoEnArregloOrdenado {
+public class Array15InsertarElementoEnArregloOrdenado {
     public static void main(String[] args) {
 
         /*EJEMPLO 1, {1, 2, 3, 4, 5, 6, 7, 8, 9, 10} >>>>>> {10,1, 2, 3, 4, 5, 6, 7, 8, 9}

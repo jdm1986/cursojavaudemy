@@ -2,7 +2,7 @@ package Parte2;
 
 import java.util.Scanner;
 
-public class Arreglos12BuscarNumero {
+public class Array12BuscarNumero {
 
     public static void main(String[] args) {
 

@@ -1,11 +1,9 @@
 package Parte2;
 
-import java.util.AbstractSet;
 import java.util.Arrays;
-import java.util.Collections;
 import java.util.Scanner;
 
-public class Arreglos09DetectandoOrden {
+public class Array09DetectandoOrden {
     public static void main(String[] args) {
 
         Scanner scanner = new Scanner(System.in);

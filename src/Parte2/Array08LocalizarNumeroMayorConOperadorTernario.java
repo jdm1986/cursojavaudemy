@@ -1,6 +1,6 @@
 package Parte2;
 
-public class Arreglos08LocalizarNumeroMayorConOperadorTernario {
+public class Array08LocalizarNumeroMayorConOperadorTernario {
 
     public static void main(String[] args) {
 

@@ -3,7 +3,7 @@ package Parte2;
 import java.util.Arrays;
 import java.util.Scanner;
 
-public class Arreglos14MoverEInsertarElementoArreglo {
+public class Array14MoverEInsertarElementoArreglo {
     public static void main(String[] args) {
 
         //EJEMPLO 1, {1, 2, 3, 4, 5, 6, 7, 8, 9, 10} >>>>>> {10,1, 2, 3, 4, 5, 6, 7, 8, 9}
