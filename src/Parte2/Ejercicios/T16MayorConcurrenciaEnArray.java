@@ -30,7 +30,27 @@ public class T16MayorConcurrenciaEnArray {
             arrayA[indiceAuxiliar + 1] = numero; // Inserto el número en la posición encontrada.
         }
         System.out.println("Array ordenado: " + Arrays.toString(arrayA)); // Muestro array ordenado
+
+        //Localizar Mayor número de veces que se reptie un número y su valor.
+        int MayorConcurrencia = 0;
+        int ValorMayorConcurrencia = 0;
+        for (int i = 0; i < arrayA.length; i++) {
+            int contador = 1; // Comenzamos a contar desde 1 ya que ya estamos en una ocurrencia del número
+            while (i + 1 < arrayA.length && arrayA[i] == arrayA[i + 1]) { //con este while localizo concurrencias consecutivas
+                contador++;
+                i++;
+            }
+
+            if (contador > MayorConcurrencia) {
+                MayorConcurrencia = contador;
+                ValorMayorConcurrencia = arrayA[i];
+            }
+        }
+
+        System.out.println("El valor con mayor concurrencia es: " + ValorMayorConcurrencia + " y aparece " + MayorConcurrencia + " veces.");
+        }
     }
-}
+
+
 
 
