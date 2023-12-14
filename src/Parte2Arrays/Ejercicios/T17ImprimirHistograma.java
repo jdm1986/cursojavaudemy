@@ -8,6 +8,7 @@ public class T17ImprimirHistograma {
 
         Scanner scanner = new Scanner(System.in);
         int[] arrayA = new int[12];
+        int[] contador = new int[6];
         System.out.println("Construyendo array de 12 elementos");
         for (int i = 0; i < arrayA.length; i++) {
             int numero;
@@ -28,40 +29,22 @@ public class T17ImprimirHistograma {
             }
 
             arrayA[indiceAuxiliar + 1] = numero; // Inserto el número en la posición encontrada.
+            contador[numero - 1]++;
+
         }
         System.out.println("Array ordenado: " + Arrays.toString(arrayA)); // Muestro array ordenado
 
-        int contadorNumero1 = 0;
-        int contadorNumero2 = 0;
-        int contadorNumero3 = 0;
-        int contadorNumero4 = 0;
-        int contadorNumero5 = 0;
-        int contadorNumero6 = 0;
-        String representacioon = "*";
+        System.out.println("********* HISTOGRAMA ************");
 
-        for (int i = 0; i < arrayA.length; i++) {
-            if (arrayA[i] == 1) {
-                contadorNumero1++;
-            } else if (arrayA[i] == 2) {
-                contadorNumero2++;
-            } else if (arrayA[i] == 3) {
-                contadorNumero3++;
-            } else if (arrayA[i]==4) {
-                contadorNumero4++;
-            } else if (arrayA[i] == 5) {
-                contadorNumero5++;
-            } else if (arrayA[i]==6) {
-                contadorNumero6++;
+        for (int i = 0; i < contador.length; i++) {
+            System.out.print((i + 1) + ": "); // Imprime el número evaluado del array y los dos puntos
+
+            for (int j = 0; j < contador[i]; j++) {
+                System.out.print("*");
             }
-        }
-        System.out.println("Histograma:");
-        System.out.println("1: " + "*".repeat(contadorNumero1));
-        System.out.println("2: " + "*".repeat(contadorNumero2));
-        System.out.println("3: " + "*".repeat(contadorNumero3));
-        System.out.println("4: " + "*".repeat(contadorNumero4));
-        System.out.println("5: " + "*".repeat(contadorNumero5));
-        System.out.println("6: " + "*".repeat(contadorNumero6));
-    }
 
+            System.out.println(); // Salto de línea al final de cada histograma
+        }
+    }
 }
 
