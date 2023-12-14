@@ -1,4 +1,4 @@
-package Parte2.Ejercicios;
+package Parte2Arrays.Ejercicios;
 
 import javax.swing.*;
 

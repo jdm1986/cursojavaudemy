@@ -1,4 +1,4 @@
-package Parte2;
+package Parte2Arrays;
 
 public class Array08LocalizarNumeroMayorConOperadorTernario {
 

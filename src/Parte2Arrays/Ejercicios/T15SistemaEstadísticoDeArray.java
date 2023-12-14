@@ -1,4 +1,4 @@
-package Parte2.Ejercicios;
+package Parte2Arrays.Ejercicios;
 
 public class T15SistemaEstadísticoDeArray {
     public static void main(String[] args) {
