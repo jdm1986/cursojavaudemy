@@ -8,18 +8,18 @@ public class Poo02AutomovilStatic {
         //al implementar el constructor con parámetros de la clase, no necesito especialmente el set. Ya que estamos creando e inicializando
         // el objeto con el fabricante y el modelo.
         subaru.setCilindrada(2.0);
-        subaru.setColor(Automovil.COLOR_BLANCO);
+        subaru.setColor(Color.BLANCO);
 
 
-        Automovil mazda = new Automovil("Mazda", "Bt-50", Automovil.COLOR_ROJO, 3.0);
+        Automovil mazda = new Automovil("Mazda", "Bt-50", Color.ROJO, 3.0);
         System.out.println("mazda.leerFabricante() = " + mazda.getFabricante());
         System.out.println();
 
-        Automovil nissan = new Automovil("Nissan", "Navara", Automovil.COLOR_GRIS, 3.5, 50);
-        Automovil nissan2 = new Automovil("Nissan", "Navara", Automovil.COLOR_GRIS, 3.5, 50);
+        Automovil nissan = new Automovil("Nissan", "Navara", Color.GRIS, 3.5, 50);
+        Automovil nissan2 = new Automovil("Nissan", "Navara", Color.GRIS, 3.5, 50);
 
-        nissan2.setColor(Automovil.COLOR_AMARILLO);
-        Automovil.setColorPatente(Automovil.COLOR_AZUL);
+        nissan2.setColor(Color.AMARILLO);
+        Automovil.setColorPatente(Color.AZUL);
         Automovil auto = new Automovil();
 
         System.out.println();

@@ -4,10 +4,10 @@ public class Automovil {
     private int id = 0;
     private String fabricante;
     private String modelo;
-    private String color = COLOR_GRIS;
+    private Color color = Color.GRIS;
     private double cilindrada;
     private int capacidadEstanque = 40;
-    private static String colorPatente = "Naranja";
+    private static Color colorPatente = Color.PÚRPURA;
     private static int capacidadEstanqueEstatico = 30;
     private static int ultimoId = 0;
     public static final Integer VELOCIDAD_MAX_CARRETERA = 120;
@@ -31,17 +31,17 @@ public class Automovil {
         this.modelo = modelo;
     }
 
-    public Automovil(String fabricante, String modelo, String color) {
+    public Automovil(String fabricante, String modelo, Color color) {
         this(fabricante, modelo);
         this.color = color;
     }
 
-    public Automovil(String fabricante, String modelo, String color, double cilindrada) {
+    public Automovil(String fabricante, String modelo, Color color, double cilindrada) {
         this(fabricante, modelo, color);
         this.cilindrada = cilindrada;
     }
 
-    public Automovil(String fabricante, String modelo, String color, double cilindrada, int capacidadEstanque) {
+    public Automovil(String fabricante, String modelo, Color color, double cilindrada, int capacidadEstanque) {
         this(fabricante, modelo, color, cilindrada);
         this.capacidadEstanque = capacidadEstanque;
     }
@@ -70,11 +70,11 @@ public class Automovil {
         this.modelo = modelo;
     }
 
-    public String getColor() {
+    public Color getColor() {
         return color;
     }
 
-    public void setColor(String color) {
+    public void setColor(Color color) {
         this.color = color;
     }
 
@@ -94,11 +94,11 @@ public class Automovil {
         this.capacidadEstanque = capacidadEstanque;
     }
 
-    public static String getColorPatente() {
+    public static Color getColorPatente() {
         return colorPatente;
     }
 
-    public static void setColorPatente(String colorPatente) {
+    public static void setColorPatente(Color colorPatente) {
         Automovil.colorPatente = colorPatente;
     }
 
@@ -117,8 +117,8 @@ public class Automovil {
                  * a continuación 4 formas de hacer referencia a los atributos, get, this.get, atributo mientras no haya una variable igual, o this.atributo. */"auto.id = " + this.id +
                 "\nauto.fabricante = " + getFabricante() +
                 "\nauto.modelo = " + this.getModelo() +
-                "\nauto.color = " + color +
-                "\nauto.patenteColor = " + colorPatente +
+                "\nauto.color = " + color.getColor() +
+                "\nauto.patenteColor = " + colorPatente.getColor() +
                 "\nauto.cilindrada = " + this.cilindrada;
         /*stringBuilder.append("auto.fabricante = " + this.fabricante);
         stringBuilder.append("\nauto.modelo = " + this.modelo);

@@ -1,3 +1,4 @@
+/*
 package Parte4ProgramacionOrientadaAObjetos;
 
 import javax.swing.plaf.synth.SynthOptionPaneUI;
@@ -29,10 +30,12 @@ public class Poo01Automovil {
 
 
 
-        /*System.out.println("mazda.fabricante = " + mazda.fabricante);
+        */
+/*System.out.println("mazda.fabricante = " + mazda.fabricante);
         System.out.println("mazda.modelo = " + mazda.modelo);
         System.out.println("mazda.color = " + mazda.color);
-        System.out.println("mazda.cilindrada = " + mazda.cilindrada);*/ //llamando directamente a los atributos.
+        System.out.println("mazda.cilindrada = " + mazda.cilindrada);*//*
+ //llamando directamente a los atributos.
 
         System.out.println(subaru.verDetalle());
         System.out.println();
@@ -69,3 +72,4 @@ public class Poo01Automovil {
 
     }
 }
+*/
