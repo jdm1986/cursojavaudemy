@@ -42,6 +42,10 @@ public class Poo01Automovil {
         System.out.println();
         System.out.println(auto.equals(fecha));
         System.out.println();
+        System.out.println(nissan);
+        System.out.println(nissan.toString());
+
+        System.out.println();
         System.out.println(subaru.acelerar(3000));
         System.out.println(subaru.frenar());
         System.out.println();

@@ -119,4 +119,16 @@ public class Automovil {
             Automovil a = (Automovil) obj;
             return (this.fabricante != null && this.modelo != null && this.fabricante.equals(a.getFabricante()) && this.modelo.equals(a.getModelo()));
         }
+
+    @Override
+    public String toString() { //botón derecho, generate (marcas todos los atributos) y representa mediante cadena los atributos del objeto. Puedes modificar para que
+                               //represente lo que quieras, todos los atributos... algunos... una cadena en concreto...
+        return "Automovil{" +
+                "fabricante='" + fabricante + '\'' +
+                ", modelo='" + modelo + '\'' +
+                ", color='" + color + '\'' +
+                ", cilindrada=" + cilindrada +
+                ", capacidadEstanque=" + capacidadEstanque +
+                '}';
     }
+}
