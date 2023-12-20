@@ -7,6 +7,9 @@ public class Automovil {
     private Color color = Color.GRIS;
     private double cilindrada;
     private int capacidadEstanque = 40;
+
+    private TipoAutomovil tipo;
+
     private static Color colorPatente = Color.PÚRPURA;
     private static int capacidadEstanqueEstatico = 30;
     private static int ultimoId = 0;
@@ -110,6 +113,14 @@ public class Automovil {
         Automovil.capacidadEstanqueEstatico = capacidadEstanqueEstatico;
     }
 
+    public TipoAutomovil getTipo() {
+        return tipo;
+    }
+
+    public void setTipo(TipoAutomovil tipo) {
+        this.tipo = tipo;
+    }
+
     public String verDetalle() {
 
         String stringBuilder =
@@ -117,6 +128,7 @@ public class Automovil {
                  * a continuación 4 formas de hacer referencia a los atributos, get, this.get, atributo mientras no haya una variable igual, o this.atributo. */"auto.id = " + this.id +
                 "\nauto.fabricante = " + getFabricante() +
                 "\nauto.modelo = " + this.getModelo() +
+                "\nauto.tipo = " + this.getTipo().getDescripcion() +
                 "\nauto.color = " + color.getColor() +
                 "\nauto.patenteColor = " + colorPatente.getColor() +
                 "\nauto.cilindrada = " + this.cilindrada;
@@ -170,12 +182,12 @@ public class Automovil {
     public String toString() { //botón derecho, generate (marcas todos los atributos) y representa mediante cadena los atributos del objeto. Puedes modificar para que
         //represente lo que quieras, todos los atributos... algunos... una cadena en concreto...
         return
-                "Automovil{" + "id='"+id+
-                "fabricante='" + fabricante + '\'' +
-                ", modelo='" + modelo + '\'' +
-                ", color='" + color + '\'' +
-                ", cilindrada=" + cilindrada +
-                ", capacidadEstanque=" + capacidadEstanque +
-                '}';
+                "Automovil{" + "id='" + id +
+                        "fabricante='" + fabricante + '\'' +
+                        ", modelo='" + modelo + '\'' +
+                        ", color='" + color + '\'' +
+                        ", cilindrada=" + cilindrada +
+                        ", capacidadEstanque=" + capacidadEstanque +
+                        '}';
     }
 }

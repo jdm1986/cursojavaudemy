@@ -1,4 +1,3 @@
-/*
 package Parte4ProgramacionOrientadaAObjetos;
 
 import javax.swing.plaf.synth.SynthOptionPaneUI;
@@ -12,14 +11,14 @@ public class Poo01Automovil {
         // el objeto con el fabricante y el modelo.
 
         subaru.setCilindrada(2.0);
-        subaru.setColor("blanco");
+        subaru.setColor(Color.BLANCO);
 
-        Automovil mazda = new Automovil("Mazda","Bt-50","Rojo",3.0);
+        Automovil mazda = new Automovil("Mazda","Bt-50",Color.ROJO,3.0);
         System.out.println("mazda.leerFabricante() = " + mazda.getFabricante());
         System.out.println();
 
-        Automovil nissan = new Automovil("Nissan","Navara","Gris Oscuro",3.5,50);
-        Automovil nissan2 = new Automovil("Nissan","Navara","Gris Oscuro",3.5,50);
+        Automovil nissan = new Automovil("Nissan","Navara",Color.GRIS,3.5,50);
+        Automovil nissan2 = new Automovil("Nissan","Navara",Color.GRIS,3.5,50);
 
         Automovil auto =new Automovil(  );
         Date fecha = new Date();
@@ -30,12 +29,10 @@ public class Poo01Automovil {
 
 
 
-        */
-/*System.out.println("mazda.fabricante = " + mazda.fabricante);
+        /*System.out.println("mazda.fabricante = " + mazda.fabricante);
         System.out.println("mazda.modelo = " + mazda.modelo);
         System.out.println("mazda.color = " + mazda.color);
-        System.out.println("mazda.cilindrada = " + mazda.cilindrada);*//*
- //llamando directamente a los atributos.
+        System.out.println("mazda.cilindrada = " + mazda.cilindrada);*/ //llamando directamente a los atributos.
 
         System.out.println(subaru.verDetalle());
         System.out.println();
@@ -72,4 +69,3 @@ public class Poo01Automovil {
 
     }
 }
-*/

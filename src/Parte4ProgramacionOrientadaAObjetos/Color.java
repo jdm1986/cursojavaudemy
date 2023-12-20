@@ -1,6 +1,9 @@
 package Parte4ProgramacionOrientadaAObjetos;
 
 public enum Color { //Un enumerador es una colección de valores constantes, o atributos constantes.
+    //Como estandar se escribe siempre en Mayúscula
+    //Conjunto de constantes que a su vez, el valor, es el mismo nombre de la constante.
+    //Es otra forma de implementar un conjunto de valores constantes, con ENUM queda más desacoplado y más ordenador, separado de la clase Automovil.
 
     ROJO("Rojo"),
     AMARILLO("Amarillo"),
@@ -24,3 +27,4 @@ public enum Color { //Un enumerador es una colección de valores constantes, o a
         return this.Color;
     }
 }
+//el toString es para dar una representación al valor de cada constante.
