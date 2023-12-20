@@ -22,6 +22,7 @@ public class Poo02AutomovilEnum {
         TipoAutomovil tipo = subaru.getTipo();
         System.out.println("tipoSubaru.getNombre() = " + tipo.getNombre());
         System.out.println("tipoSubaru.getDescripcion() = " + tipo.getDescripcion());
+        System.out.println();
 
         tipo = mazda.getTipo();
         switch (tipo) {
@@ -33,6 +34,24 @@ public class Poo02AutomovilEnum {
             case SEDAN -> System.out.println("Auto tipo berlina mediano");
             case STATION_WAGON -> System.out.println("Automóvil grande con maletero grande");
         }
+
+        TipoAutomovil[] tipos = TipoAutomovil.values();
+
+       for (int i = 0; i<tipos.length;i++){
+           TipoAutomovil ta = tipos[i];
+           System.out.println(ta + " => " + ta.name() + ", "+
+                   ta.getNombre() + ", " +
+                   ta.getDescripcion()+ ", "+
+                   ta.getNumeroPuertas());
+       }
+
+        //foreach
+        /*for (TipoAutomovil ta : tipos) {
+            System.out.println(ta + " => " + ta.name() + ", "+
+                    ta.getNombre() + ", " +
+                    ta.getDescripcion()+ ", "+
+                    ta.getNumeroPuertas());
+        }*/
 
 
 
