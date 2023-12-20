@@ -1,39 +1,54 @@
 package Ejercicios;
 
 import javax.swing.*;
+import java.awt.*;
+import java.awt.datatransfer.*;
+import java.awt.event.*;
 
 public class ProgramaNotasTipoTest {
 
-        public static void main(String[] args) {
+    public static void main(String[] args) {
+        String aciertosStr = JOptionPane.showInputDialog("Introduce el número de aciertos:");
+        int aciertos = Integer.parseInt(aciertosStr);
 
-            String totalPreguntasStr = JOptionPane.showInputDialog("Introduce el total de preguntas:");
-            int totalPreguntas = Integer.parseInt(totalPreguntasStr);
+        String erroresStr = JOptionPane.showInputDialog("Introduce el número de errores:");
+        int errores = Integer.parseInt(erroresStr);
 
-            String aciertosStr = JOptionPane.showInputDialog("Introduce el número de aciertos:");
-            int aciertos = Integer.parseInt(aciertosStr);
+        int totalPreguntas = aciertos + errores;
 
-            String erroresStr = JOptionPane.showInputDialog("Introduce el número de errores:");
-            int errores = Integer.parseInt(erroresStr);
+        int penalizacion = errores / 4;
 
-            int penalizacion = errores / 4;
+        int aciertosFinales = Math.max(aciertos - penalizacion, 0);
 
-            int aciertosFinales = Math.max(aciertos - penalizacion, 0);
+        boolean aprobado = (aciertosFinales / (double) totalPreguntas) > 0.5;
 
-            boolean aprobado = (aciertosFinales / (double) totalPreguntas) > 0.5;
+        double notaFinal = 10.0 * aciertosFinales / totalPreguntas;
 
-            if (aprobado){
-                System.out.println("Enhorabuena has aprobado");
-                // Calcular la nota final
-                double notaFinal = 10.0 * aciertosFinales / totalPreguntas;
-                // Mostrar el resultado
-                JOptionPane.showMessageDialog(null, "Nota final: " + notaFinal);
-            } else {
-                System.out.println("Lo siento, has suspendido");
-                double notaFinal = 10.0 * aciertosFinales / totalPreguntas;
-                // Mostrar el resultado
-                JOptionPane.showMessageDialog(null, "Nota final: " + notaFinal);
+        final String mensaje = (aprobado ? "Enhorabuena has aprobado" : "Lo siento, has suspendido") +
+                "\nNota final: " + notaFinal;
+
+        // Crear el JPanel para la ventana personalizada
+        JPanel panel = new JPanel();
+        panel.setLayout(new BorderLayout());
+
+        // Agregar el mensaje
+        JTextArea textArea = new JTextArea(mensaje);
+        textArea.setEditable(false);
+        panel.add(textArea, BorderLayout.CENTER);
+
+        // Crear el botón de copiar
+        JButton copyButton = new JButton("Copiar Resultado");
+        copyButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                StringSelection stringSelection = new StringSelection(mensaje);
+                Clipboard clipboard = Toolkit.getDefaultToolkit().getSystemClipboard();
+                clipboard.setContents(stringSelection, null);
             }
+        });
+        panel.add(copyButton, BorderLayout.SOUTH);
 
-        }
+        // Mostrar el diálogo
+        JOptionPane.showMessageDialog(null, panel);
     }
-
+}
