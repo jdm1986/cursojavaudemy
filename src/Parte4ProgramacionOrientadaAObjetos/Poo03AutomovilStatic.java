@@ -1,7 +1,7 @@
 package Parte4ProgramacionOrientadaAObjetos;
 
 
-public class Poo02AutomovilStatic {
+public class Poo03AutomovilStatic {
     public static void main(String[] args) {
         Automovil.setCapacidadEstanqueEstatico(45);
         Automovil subaru = new Automovil("subauru", "Impreza");

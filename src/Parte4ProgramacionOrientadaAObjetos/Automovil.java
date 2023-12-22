@@ -122,7 +122,7 @@ public class Automovil {
     }
 
     public Deposito getDeposito() {
-        if(deposito == null){
+        if (deposito == null) {
             this.deposito = new Deposito();
         }
         return deposito;
@@ -160,8 +160,19 @@ public class Automovil {
         }
         detalle += "\nauto.color = " + color.getColor() +
                 "\nauto.patenteColor = " + colorPatente.getColor();
-        if (this.motor != null){
-               detalle+="\nauto.cilindrada = " + this.motor.getCilindrada();}
+        if (this.motor != null) {
+            detalle += "\nauto.cilindrada = " + this.motor.getCilindrada();
+        }
+        if (conductor != null) {
+            detalle += "\nConductor subaru: " + this.getConductor();
+        }
+        if (getRuedas() != null) {
+            for (Rueda rueda : this.getRuedas()) {
+                detalle += "\n" + rueda.getFabricante() + ", aro: " + rueda.getAro() + ", ancho" + rueda.getAncho();
+            }
+        }
+
+
         /*stringBuilder.append("auto.fabricante = " + this.fabricante);
         stringBuilder.append("\nauto.modelo = " + this.modelo);
         stringBuilder.append("\nauto.color = " + this.color);
@@ -209,7 +220,7 @@ public class Automovil {
     }
 
     @Override
-    public String toString() { //botón derecho, generate (marcas todos los atributos) y representa mediante cadena los atributos del objeto. Puedes modificar para que
+    public String toString() { //Botón derecho, "generaTE" (marcas todos los atributos) y representa mediante cadena los atributos del objeto. Puedes modificar para que
         //represente lo que quieras, todos los atributos... algunos... una cadena en concreto...
         return
                 "Automovil{" + "id='" + id +
