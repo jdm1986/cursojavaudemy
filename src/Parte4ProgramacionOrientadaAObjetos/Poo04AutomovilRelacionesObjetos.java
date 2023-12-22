@@ -5,6 +5,7 @@ public class Poo04AutomovilRelacionesObjetos {
     public static void main(String[] args) {
 
         Rueda[] ruedasSubaru = new Rueda[5];//implementación de array1
+
         ruedasSubaru[0] = new Rueda("GoodYear", 16, 7.5);
         ruedasSubaru[1] = new Rueda("GoodYear", 16, 7.5);
         ruedasSubaru[2] = new Rueda("GoodYear", 16, 7.5);
@@ -35,11 +36,9 @@ public class Poo04AutomovilRelacionesObjetos {
         System.out.println();
 
 
-        Rueda[] ruedasNissan = {new Rueda("Pirelli", 20, 11.5),
-                new Rueda("Pirelli", 20, 11.5),
-                new Rueda("Pirelli", 20, 11.5),
-                new Rueda("Pirelli", 20, 11.5),
-                new Rueda("Pirelli", 20, 11.5),
+        Rueda[] ruedasNissan = new Rueda[5];  //implementación de array3 con un For
+        for (int i = 0;i<ruedasNissan.length;i++){
+            ruedasNissan[i] = new Rueda("Pirelli", 20, 11.5);
         };
         Persona laura = new Persona("Laura", "Lara");
         Automovil nissan = new Automovil("Nissan", "Navara", Color.GRIS, new Motor(4.0, TipoMotor.DIESEL), new Deposito(50), laura, ruedasNissan);
