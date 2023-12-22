@@ -20,7 +20,7 @@ public class Poo04AutomovilRelacionesObjetos {
         subaru.setColor(Color.BLANCO);
         subaru.setTipo(TipoAutomovil.HATCHBACK);
         subaru.setConductor(conductorSubaru);
-        subaru.setRuedas(ruedasSubaru);
+        //subaru.setRuedas(ruedasSubaru);
 
 
         Rueda[] ruedasMazda = {new Rueda("Michelin", 18, 10.5), //implementación de array2
@@ -32,7 +32,7 @@ public class Poo04AutomovilRelacionesObjetos {
         mazda.setTipo(TipoAutomovil.PICKUP);
         mazda.setDeposito(new Deposito(50));
         mazda.setConductor(new Persona("Israel", "Boza"));
-        mazda.setRuedas(ruedasMazda);
+        //mazda.setRuedas(ruedasMazda);
         System.out.println();
 
 

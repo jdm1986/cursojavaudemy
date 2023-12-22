@@ -148,6 +148,7 @@ public class Automovil {
         this.ruedas = ruedas;
     }
 
+
     public String verDetalle() {
 
         String detalle =
@@ -227,7 +228,7 @@ public class Automovil {
                         "fabricante='" + fabricante + '\'' +
                         ", modelo='" + modelo + '\'' +
                         ", color='" + color + '\'' +
-                        ", cilindrada=" + motor.getCilindrada() +
+                        ", cilindrada=" + this.motor.getCilindrada() +
                         ", capacidadEstanque=" + deposito.getCapacidad() +
                         '}';
     }
