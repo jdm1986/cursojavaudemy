@@ -14,7 +14,7 @@ public class Poo02AutomovilStatic {
 
 
         Automovil mazda = new Automovil("Mazda", "Bt-50", Color.ROJO, new Motor(3.0,TipoMotor.DIESEL));
-        mazda.setTipo(TipoAutomovil.PICKUP);
+        //mazda.setDeposito(new Deposito(50));
         System.out.println("mazda.leerFabricante() = " + mazda.getFabricante());
         System.out.println();
 
@@ -45,6 +45,8 @@ public class Poo02AutomovilStatic {
         TipoAutomovil tipoSubaru = subaru.getTipo();
         System.out.println("tipoSubaru.getNombre() = " + tipoSubaru.getNombre());
         System.out.println("tipoSubaru.getDescripcion() = " + tipoSubaru.getDescripcion());
+
+        System.out.println(mazda.calcularConsumo(300,70));
 
     }
 

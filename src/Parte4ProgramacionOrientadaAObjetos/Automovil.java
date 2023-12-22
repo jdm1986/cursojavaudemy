@@ -52,7 +52,7 @@ public class Automovil {
     }
 
     public Automovil(String fabricante, String modelo, Color color, Motor motor, Deposito deposito, Persona conductor, Rueda[] ruedas) {
-        this(fabricante, modelo, color, motor,deposito);
+        this(fabricante, modelo, color, motor, deposito);
         this.conductor = conductor;
         this.ruedas = ruedas;
     }
@@ -122,6 +122,9 @@ public class Automovil {
     }
 
     public Deposito getDeposito() {
+        if(deposito == null){
+            this.deposito = new Deposito();
+        }
         return deposito;
     }
 
@@ -147,20 +150,23 @@ public class Automovil {
 
     public String verDetalle() {
 
-        String stringBuilder =
+        String detalle =
                 /*con el this hago referencia de forma explícita al atributo de la clase y no a una variable que se llame igual dentr del contexto del método
                  * a continuación 4 formas de hacer referencia a los atributos, get, this.get, atributo mientras no haya una variable igual, o this.atributo. */"auto.id = " + this.id +
                 "\nauto.fabricante = " + getFabricante() +
-                "\nauto.modelo = " + this.getModelo() +
-                "\nauto.tipo = " + this.getTipo().getDescripcion() +
-                "\nauto.color = " + color.getColor() +
-                "\nauto.patenteColor = " + colorPatente.getColor() +
-                "\nauto.cilindrada = " + this.motor.getCilindrada();
+                "\nauto.modelo = " + this.getModelo();
+        if (this.getTipo() != null) {
+            detalle += "\nauto.tipo = " + this.getTipo().getDescripcion();
+        }
+        detalle += "\nauto.color = " + color.getColor() +
+                "\nauto.patenteColor = " + colorPatente.getColor();
+        if (this.motor != null){
+               detalle+="\nauto.cilindrada = " + this.motor.getCilindrada();}
         /*stringBuilder.append("auto.fabricante = " + this.fabricante);
         stringBuilder.append("\nauto.modelo = " + this.modelo);
         stringBuilder.append("\nauto.color = " + this.color);
         stringBuilder.append("\nauto.cilindrada = " + this.cilindrada);*/ //otra manera sin concatenar.
-        return stringBuilder;
+        return detalle;
     }
 
     public String acelerar(int rpm) {
@@ -179,7 +185,7 @@ public class Automovil {
     }
 
     public float calcularConsumo(int km, float porcentajeCombustible) {
-        return km / (this.deposito.getCapacidad() * porcentajeCombustible);
+        return km / (this.getDeposito().getCapacidad() * porcentajeCombustible);
     }
 
     public static float calcularConsumoEstatico(int km, float porcentajeCombustible) {
@@ -187,7 +193,7 @@ public class Automovil {
     }
 
     public float calcularConsumo(int km, int porcentajeCombustible) {
-        return km / (this.deposito.getCapacidad() * (porcentajeCombustible / 100f));
+        return km / (this.getDeposito().getCapacidad() * (porcentajeCombustible / 100f));
     }
 
     @Override
