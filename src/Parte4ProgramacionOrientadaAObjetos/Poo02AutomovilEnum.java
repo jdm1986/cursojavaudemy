@@ -53,8 +53,6 @@ public class Poo02AutomovilEnum {
                     ta.getNumeroPuertas());
         }*/
 
-
-
     }
 
 }
