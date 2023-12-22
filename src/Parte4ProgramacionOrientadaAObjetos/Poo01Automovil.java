@@ -6,19 +6,23 @@ import java.util.Date;
 public class Poo01Automovil {
     public static void main(String[] args) {
 
+        Motor motorSuburu = new Motor (2.0,TipoMotor.GASOLINA); //creada la instancia del motor fuera.
     Automovil subaru = new Automovil("subauru","Impreza");
     //al implementar el constructor con parámetros de la clase, no necesito especialmente el set. Ya que estamos creando e inicializando
         // el objeto con el fabricante y el modelo.
-
-        subaru.setCilindrada(2.0);
+        subaru.setMotor(motorSuburu);
+        subaru.setDeposito(new Deposito());//usa constructor por defecto.
         subaru.setColor(Color.BLANCO);
 
-        Automovil mazda = new Automovil("Mazda","Bt-50",Color.ROJO,3.0);
+        Automovil mazda = new Automovil("Mazda","Bt-50",Color.ROJO,new Motor(3.0,TipoMotor.DIESEL)); //creada la instancia dentro
         System.out.println("mazda.leerFabricante() = " + mazda.getFabricante());
+        mazda.setDeposito(new Deposito(45));//creada la instancia dentro
         System.out.println();
 
-        Automovil nissan = new Automovil("Nissan","Navara",Color.GRIS,3.5,50);
-        Automovil nissan2 = new Automovil("Nissan","Navara",Color.GRIS,3.5,50);
+        Motor motorNissan = new Motor(3.5,TipoMotor.DIESEL); // Creada la instancia fuera
+        Deposito depositoNissan = new Deposito(50);
+        Automovil nissan = new Automovil("Nissan","Navara",Color.GRIS,motorNissan,depositoNissan);
+        Automovil nissan2 = new Automovil("Nissan","Navara",Color.GRIS,new Motor(3.5,TipoMotor.GASOLINA),new Deposito(60));
 
         Automovil auto =new Automovil(  );
         Date fecha = new Date();

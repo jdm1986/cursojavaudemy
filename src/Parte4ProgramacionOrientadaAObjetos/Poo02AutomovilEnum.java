@@ -7,13 +7,15 @@ public class Poo02AutomovilEnum {
         Automovil subaru = new Automovil("subauru", "Impreza");
         //Al implementar el constructor con parámetros de la clase, no necesito especialmente el set. Ya que estamos creando e inicializando
         //el objeto con el fabricante y el modelo.
-        subaru.setCilindrada(2.0);
+        subaru.setMotor(new Motor (2.0,TipoMotor.GASOLINA));
+        subaru.setDeposito(new Deposito());
         subaru.setColor(Color.BLANCO);
         subaru.setTipo(TipoAutomovil.HATCHBACK);
         System.out.println();
 
 
-        Automovil mazda = new Automovil("Mazda", "Bt-50", Color.ROJO, 3.0);
+        Automovil mazda = new Automovil("Mazda", "Bt-50", Color.ROJO, new Motor(3.0,TipoMotor.DIESEL));
+        mazda.setDeposito(new Deposito(45));
         mazda.setTipo(TipoAutomovil.PICKUP);
         System.out.println("mazda.leerFabricante() = " + mazda.getFabricante());
         System.out.println();

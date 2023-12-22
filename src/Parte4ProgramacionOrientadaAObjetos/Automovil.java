@@ -5,8 +5,10 @@ public class Automovil {
     private String fabricante;
     private String modelo;
     private Color color = Color.GRIS;
-    private double cilindrada;
-    private int capacidadEstanque = 40;
+    private Motor motor;
+    private Deposito deposito;
+    private Persona conductor;
+    private Rueda[] ruedas;
 
     private TipoAutomovil tipo;
 
@@ -39,14 +41,20 @@ public class Automovil {
         this.color = color;
     }
 
-    public Automovil(String fabricante, String modelo, Color color, double cilindrada) {
+    public Automovil(String fabricante, String modelo, Color color, Motor motor) {
         this(fabricante, modelo, color);
-        this.cilindrada = cilindrada;
+        this.motor = motor;
     }
 
-    public Automovil(String fabricante, String modelo, Color color, double cilindrada, int capacidadEstanque) {
-        this(fabricante, modelo, color, cilindrada);
-        this.capacidadEstanque = capacidadEstanque;
+    public Automovil(String fabricante, String modelo, Color color, Motor motor, Deposito deposito) {
+        this(fabricante, modelo, color, motor);
+        this.deposito = deposito;
+    }
+
+    public Automovil(String fabricante, String modelo, Color color, Motor motor, Deposito deposito, Persona conductor, Rueda[] ruedas) {
+        this(fabricante, modelo, color, motor,deposito);
+        this.conductor = conductor;
+        this.ruedas = ruedas;
     }
 
     public int getId() {
@@ -81,22 +89,6 @@ public class Automovil {
         this.color = color;
     }
 
-    public double getCilindrada() {
-        return cilindrada;
-    }
-
-    public void setCilindrada(double cilindrada) {
-        this.cilindrada = cilindrada;
-    }
-
-    public int getCapacidadEstanque() {
-        return capacidadEstanque;
-    }
-
-    public void setCapacidadEstanque(int capacidadEstanque) {
-        this.capacidadEstanque = capacidadEstanque;
-    }
-
     public static Color getColorPatente() {
         return colorPatente;
     }
@@ -121,6 +113,38 @@ public class Automovil {
         this.tipo = tipo;
     }
 
+    public Motor getMotor() {
+        return motor;
+    }
+
+    public void setMotor(Motor motor) {
+        this.motor = motor;
+    }
+
+    public Deposito getDeposito() {
+        return deposito;
+    }
+
+    public void setDeposito(Deposito deposito) {
+        this.deposito = deposito;
+    }
+
+    public Persona getConductor() {
+        return conductor;
+    }
+
+    public void setConductor(Persona conductor) {
+        this.conductor = conductor;
+    }
+
+    public Rueda[] getRuedas() {
+        return ruedas;
+    }
+
+    public void setRuedas(Rueda[] ruedas) {
+        this.ruedas = ruedas;
+    }
+
     public String verDetalle() {
 
         String stringBuilder =
@@ -131,7 +155,7 @@ public class Automovil {
                 "\nauto.tipo = " + this.getTipo().getDescripcion() +
                 "\nauto.color = " + color.getColor() +
                 "\nauto.patenteColor = " + colorPatente.getColor() +
-                "\nauto.cilindrada = " + this.cilindrada;
+                "\nauto.cilindrada = " + this.motor.getCilindrada();
         /*stringBuilder.append("auto.fabricante = " + this.fabricante);
         stringBuilder.append("\nauto.modelo = " + this.modelo);
         stringBuilder.append("\nauto.color = " + this.color);
@@ -155,7 +179,7 @@ public class Automovil {
     }
 
     public float calcularConsumo(int km, float porcentajeCombustible) {
-        return km / (this.capacidadEstanque * porcentajeCombustible);
+        return km / (this.deposito.getCapacidad() * porcentajeCombustible);
     }
 
     public static float calcularConsumoEstatico(int km, float porcentajeCombustible) {
@@ -163,7 +187,7 @@ public class Automovil {
     }
 
     public float calcularConsumo(int km, int porcentajeCombustible) {
-        return km / (this.capacidadEstanque * (porcentajeCombustible / 100f));
+        return km / (this.deposito.getCapacidad() * (porcentajeCombustible / 100f));
     }
 
     @Override
@@ -186,8 +210,8 @@ public class Automovil {
                         "fabricante='" + fabricante + '\'' +
                         ", modelo='" + modelo + '\'' +
                         ", color='" + color + '\'' +
-                        ", cilindrada=" + cilindrada +
-                        ", capacidadEstanque=" + capacidadEstanque +
+                        ", cilindrada=" + motor.getCilindrada() +
+                        ", capacidadEstanque=" + deposito.getCapacidad() +
                         '}';
     }
 }
