@@ -26,7 +26,6 @@ public class ProgramaNotasTipoTest {
 
         final String mensaje = (aprobado ? "Enhorabuena has aprobado" : "Lo siento, has suspendido") +
                 "\nNota final: " + notaFinal;
-
         // Crear el JPanel para la ventana personalizada
         JPanel panel = new JPanel();
         panel.setLayout(new BorderLayout());
