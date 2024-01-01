@@ -1,4 +1,4 @@
-package com.jdiaz.appfacturas.modelo;
+package com.jdiaz.parte6curso_appfacturas.modelo;
 
 public class Producto {
 

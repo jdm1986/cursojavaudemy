@@ -1,9 +1,9 @@
-package com.jdiaz.appfacturas;
+package com.jdiaz.parte6curso_appfacturas;
 
-import com.jdiaz.appfacturas.modelo.Cliente;
-import com.jdiaz.appfacturas.modelo.Factura;
-import com.jdiaz.appfacturas.modelo.ItemFactura;
-import com.jdiaz.appfacturas.modelo.Producto;
+import com.jdiaz.parte6curso_appfacturas.modelo.Cliente;
+import com.jdiaz.parte6curso_appfacturas.modelo.Factura;
+import com.jdiaz.parte6curso_appfacturas.modelo.ItemFactura;
+import com.jdiaz.parte6curso_appfacturas.modelo.Producto;
 
 import java.util.Scanner;
 

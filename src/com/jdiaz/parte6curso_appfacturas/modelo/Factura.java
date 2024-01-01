@@ -1,4 +1,4 @@
-package com.jdiaz.appfacturas.modelo;
+package com.jdiaz.parte6curso_appfacturas.modelo;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
