@@ -83,22 +83,29 @@ public class Factura {
 
         SimpleDateFormat dateFormat = new SimpleDateFormat("dd 'de' MMMM, yyyy");
         stringBuilder.append("Fecha Emisión: ").append(dateFormat.format(this.fecha)).append("\n")
-                .append("\n#\tNombre\t€\tCantidad:\tTotal:\n");
+                .append("\n#\tNombre\t\t\t€Euros€\tCantidad:\tTotal:\n");
 
         for (ItemFactura item : this.arrayItems) {
             if (item == null){
                 continue;
             }
-            stringBuilder.append(item.getProducto().getCodigo()).append("\t")
+            stringBuilder.append(item).append("\n");
+            /*stringBuilder.append(item.getProducto().getCodigo()).append("\t")
                     .append(item.getProducto().getNombre()).append("\t")
                     .append(item.getProducto().getPrecio()).append("\t")
                     .append(item.getCantidad()).append("\t")
                     .append(item.calcularImporte()).append("\t")
-                    .append("\n");
+                    .append("\n");*/ //al haber implementado los toString en ItemFactura y Producto me ahorro todas estas líneas de código.
+            //imprimiendo el objetio item invocando el toString
         }
         stringBuilder.append("\nGRAN TOTAL: ").append(calcularTotal());
 
         return stringBuilder.toString();
 
+    }
+
+    @Override
+    public String toString() {
+        return generarDetalle();
     }
 }
