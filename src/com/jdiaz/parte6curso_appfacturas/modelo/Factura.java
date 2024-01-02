@@ -64,11 +64,8 @@ public class Factura {
 
     public float calcularTotal() {
         float total = 0.0f;
-        for (ItemFactura item : this.arrayItems) {
-            if (item == null) {
-                continue;
-            }
-            total += item.calcularImporte();
+        for (int i = 0; i < indiceItems; i++) {
+            total += this.arrayItems[i].calcularImporte();
         }
         return total;
     }
@@ -85,11 +82,8 @@ public class Factura {
         stringBuilder.append("Fecha Emisión: ").append(dateFormat.format(this.fecha)).append("\n")
                 .append("\n#\tNombre\t\t\t€Euros€\tCantidad:\tTotal:\n");
 
-        for (ItemFactura item : this.arrayItems) {
-            if (item == null){
-                continue;
-            }
-            stringBuilder.append(item).append("\n");
+        for (int i = 0; i < indiceItems; i++) {
+            stringBuilder.append(this.arrayItems[i]).append("\n");
             /*stringBuilder.append(item.getProducto().getCodigo()).append("\t")
                     .append(item.getProducto().getNombre()).append("\t")
                     .append(item.getProducto().getPrecio()).append("\t")

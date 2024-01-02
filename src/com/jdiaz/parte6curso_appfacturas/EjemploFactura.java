@@ -13,8 +13,7 @@ public class EjemploFactura {
 
         Scanner scanner = new Scanner(System.in);
         System.out.print("Ingrese una descripción de la factura: ");
-        String descripcionFactura = scanner.nextLine();
-        Factura factura = new Factura(descripcionFactura, cliente);
+        Factura factura = new Factura(scanner.nextLine(), cliente);
 
         Producto producto;
         /*String nombre; en vez de usar las variables uso directamente scanner línea 29
@@ -23,7 +22,7 @@ public class EjemploFactura {
 
         System.out.println();
 
-        for (int i = 0; i < 5; i++) {
+        for (int i = 0; i < 2; i++) {
             producto = new Producto();
             System.out.print("Ingresa producto nº " + producto.getCodigo() + ": ");
             producto.setNombre(scanner.nextLine());
