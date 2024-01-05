@@ -56,17 +56,26 @@ public class EjemploHerenciaConstructores {
             System.out.println("Nota historia: " + ((Alumno) persona).getNotaHistoria());
             System.out.println("Nota lengua: " + ((Alumno) persona).getNotaLengua());
 
+
             if (persona instanceof AlumnoInternacional) {
                 System.out.println("----Imprimiendo los datos del Tipo ALUMNO INTERNACIONAL----");
                 System.out.println("Nota idiomas: " + ((AlumnoInternacional) persona).getNotasIdiomas());
                 System.out.println("Pais: " + ((AlumnoInternacional) persona).getPais());
+
             }
+            System.out.println("============================ SOBRE ESCRITURA PROMEDIO ================================");
+                System.out.println("Nota promedio: " + ((Alumno) persona).calcularPromedio());
+            System.out.println("============================ SOBRE ESCRITURA PROMEDIO ================================");
         }
 
         if (persona instanceof Profesor) {
             System.out.println("----Imprimiendo los datos del Tipo Profesor----");
             System.out.println("Asignatura: " + ((Profesor) persona).getAsignatura());
         }
+        System.out.println("============================ SOBRE ESCRITURA SALUDAR ================================");
+
+        System.out.println(persona.saludar());
+
         System.out.println("============================ SEPARADOR ================================");
     }
 }
