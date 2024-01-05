@@ -1,13 +1,13 @@
 package com.jdiaz.parte8curso_poo_herencia;
 
-public class Alumno extends Persona{
+public class Alumno extends Persona {
 
     private String instituto;
     private double notaMatematicas;
     private double notaLengua;
     private double notaHistoria;
 
-    public Alumno(){
+    public Alumno() {
         System.out.println("Alumno: inicializando constructor...");
     }
 
@@ -64,13 +64,22 @@ public class Alumno extends Persona{
     }
 
     @Override
-    public String saludar(){
+    public String saludar() {
         String saludar = super.saludar();
-        return saludar +" soy alumno y mi nombre es " + getNombre();
+        return saludar + " soy alumno y mi nombre es " + getNombre();
     }
 
-    public double calcularPromedio(){
-        System.out.println("CalcularPromedio " + this.getClass().getCanonicalName());
-        return (notaHistoria+notaLengua+notaMatematicas)/3;
+    public double calcularPromedio() {
+       // System.out.println("CalcularPromedio " + Alumno.class.getCanonicalName());
+        return (notaHistoria + notaLengua + notaMatematicas) / 3;
+    }
+
+    @Override
+    public String toString() {
+        return super.toString() + "\ninstituto='" + instituto + '\'' +
+                ", notaMatematicas= " + notaMatematicas +
+                ", notaLengua= " + notaLengua +
+                ", notaHistoria= " + notaHistoria +
+                ", promedio de notas= "+this.calcularPromedio();
     }
 }
