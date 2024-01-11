@@ -27,6 +27,16 @@ public class EjemploForm {
         lenguaje.addOpcion(new Opcion("4", "TypeScript"));
         lenguaje.addOpcion(new Opcion("5","PHP"));
 
+
+        ElementoForm saludar = new ElementoForm() {
+            @Override
+            public String dibujarHtml() {
+                return "<input disabled name='" + this.nombre + "' value=\"" + this.valor + "\">";
+            }
+        };
+
+
+        saludar.setValor("Hola que tal este campo está deshabilitado");
         ursername.setValor("John.doe");
         password.setValor("a1b2c3");
         email.setValor("john.doe@correo.com");
@@ -41,6 +51,7 @@ public class EjemploForm {
         elementos.add(edad);
         elementos.add(experiencia);
         elementos.add(lenguaje);
+        elementos.add(saludar);
 
         for (ElementoForm e :
                 elementos) {
