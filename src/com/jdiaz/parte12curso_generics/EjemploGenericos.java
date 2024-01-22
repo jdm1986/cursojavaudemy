@@ -1,0 +1,45 @@
+package com.jdiaz.parte12curso_generics;
+
+import com.jdiaz.parte11curso_poo_interfaces_repositorio.modelo.Cliente;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
+public class EjemploGenericos {
+    public static void main(String[] args) {
+
+        List<Cliente> clientes = new ArrayList<>();
+        clientes.add(new Cliente("Andres", "Guzman"));
+
+        Cliente adnres = clientes.get(0);
+
+        Cliente[] clientesArray =
+                {new Cliente("Luci", "Martinez")
+                ,new Cliente("Andres", "Guzman")};
+
+        Integer [] enterosArray = {1,2,3};
+
+        List<Cliente> clientesLista = fromArrayToList(clientesArray);
+        List<Integer> enterosLista = fromArrayToList(enterosArray);
+
+        clientesLista.forEach(System.out::println);
+        enterosLista.forEach(System.out::println);
+
+        List<String> nombres = fromArrayToList(new String[]{"Andres", "Pepe", "Luci", "Bea", "John"},enterosArray);
+        nombres.forEach(System.out::println);
+
+
+    }
+
+    public static <T> List<T> fromArrayToList(T[] c){
+        return Arrays.asList(c);
+    }
+
+    public static <T,G> List<T> fromArrayToList(T[] c, G[] x){
+        for (G elemento : x) {
+            System.out.println(elemento);
+        }
+        return Arrays.asList(c);
+    }
+}
