@@ -3,7 +3,6 @@ package com.jdiaz.parte13curso_clases_genericas;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
-import java.util.Objects;
 
 public class Camion implements Iterable {
 
@@ -15,7 +14,7 @@ public class Camion implements Iterable {
         this.objetos = new ArrayList<>();
     }
 
-    public void add(Objects objeto){
+    public void add(Object objeto){
         if(this.objetos.size() <= max){
             this.objetos.add(objeto);
         } else {
