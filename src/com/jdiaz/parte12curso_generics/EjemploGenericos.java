@@ -1,6 +1,7 @@
 package com.jdiaz.parte12curso_generics;
 
 import com.jdiaz.parte11curso_poo_interfaces_repositorio.modelo.Cliente;
+import com.jdiaz.parte11curso_poo_interfaces_repositorio.modelo.ClientePremium;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -29,10 +30,23 @@ public class EjemploGenericos {
         List<String> nombres = fromArrayToList(new String[]{"Andres", "Pepe", "Luci", "Bea", "John"},enterosArray);
         nombres.forEach(System.out::println);
 
+        List<ClientePremium> clientesPremiumList = fromArrayToList(new ClientePremium[]{
+                new ClientePremium("Paco","Fernandez")});
+
 
     }
 
-    public static <T> List<T> fromArrayToList(T[] c){
+
+
+    public static <T > List<T> fromArrayToList(T[] c){
+        return Arrays.asList(c);
+    }
+
+    public static <T extends Number> List<T> fromArrayToList(T[] c){
+        return Arrays.asList(c);
+    }
+
+    public static <T extends Cliente & Comparable<T>> List<T> fromArrayToList(T[] c){
         return Arrays.asList(c);
     }
 
