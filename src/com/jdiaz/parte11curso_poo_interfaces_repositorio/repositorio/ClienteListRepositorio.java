@@ -5,7 +5,7 @@ import com.jdiaz.parte11curso_poo_interfaces_repositorio.modelo.Cliente;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ClienteListRepositorio implements OrdenablePaginableCrudRepositorio {
+public class ClienteListRepositorio implements OrdenablePaginableCrudRepositorio<Cliente> {
 
     private List<Cliente> dataSource;
 
