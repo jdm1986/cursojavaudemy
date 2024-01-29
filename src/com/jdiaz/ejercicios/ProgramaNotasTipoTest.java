@@ -49,5 +49,7 @@ public class ProgramaNotasTipoTest {
 
         // Mostrar el diálogo
         JOptionPane.showMessageDialog(null, panel);
+
+
     }
 }

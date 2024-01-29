@@ -33,8 +33,6 @@ public class EjemploRepositorio {
         Cliente beaActualizar = new Cliente("Bea", "Mena");
         beaActualizar.setId(2);
         repo.editar(beaActualizar);
-        Cliente bea = repo.porId(2);
-        System.out.println(bea);
         System.out.println("======== Eliminar ==========");
 
         repo.eliminar(2);
