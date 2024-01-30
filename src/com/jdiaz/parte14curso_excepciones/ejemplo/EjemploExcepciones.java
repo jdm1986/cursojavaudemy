@@ -5,20 +5,23 @@ import java.util.Scanner;
 
 public class EjemploExcepciones {
     public static void main(String[] args) {
-
         Scanner scanner = new Scanner(System.in);
+        Calculadora calculadora = new Calculadora();
+
+
         System.out.println("Ingresa un valor: ");
-        String valor = scanner.nextLine();
+        int divisor = scanner.nextInt();
+        double division;
 
         try {
-            int divisor = Integer.parseInt(valor);
-            int division = 10/divisor;
+
+            division = calculadora.dividir(10,divisor);;
             System.out.println("division = " + division);
         }catch (NumberFormatException nfe){
             System.out.println("Se detectó una exepción: ingresa un valor numérico: " + nfe.getMessage());
             main(args);
         }
-        catch (ArithmeticException ae){
+        catch (DivisionPorCeroException ae){
             System.out.println("Capturamos la excepción en tiempo de ejecución" + ae.getMessage());
             main(args);
         } finally {
