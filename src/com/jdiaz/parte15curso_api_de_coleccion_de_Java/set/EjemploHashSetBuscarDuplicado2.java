@@ -8,6 +8,8 @@ public class EjemploHashSetBuscarDuplicado2 {
 
         String[] peces = {"Corvina", "Lenguado", "Pejerrey", "Corvina", "Robalo", "Atún", "Lenguado"};
 
+
+
         Set<String> unicos = new HashSet<>();
         Set<String> duplicados = new HashSet<>();
 
@@ -17,7 +19,7 @@ public class EjemploHashSetBuscarDuplicado2 {
 
             }
         }
-        unicos.removeAll(duplicados);
+        //unicos.removeAll(duplicados);
 
         System.out.println("Unicos: " + unicos);
         System.out.println("duplicados = " + duplicados);
