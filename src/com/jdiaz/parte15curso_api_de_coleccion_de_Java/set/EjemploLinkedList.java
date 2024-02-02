@@ -6,6 +6,7 @@ import javax.sound.midi.Soundbank;
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.ListIterator;
 
 public class EjemploLinkedList {
     public static void main(String[] args) {
@@ -15,11 +16,11 @@ public class EjemploLinkedList {
 
         System.out.println(linkedList + ", size = " + linkedList.size());
         System.out.println("esta vacía = " + linkedList.isEmpty());
-        linkedList.add(new Alumno("Paco", 5));
+        linkedList.add(new Alumno("Paco", 7));
         linkedList.add(new Alumno("Bea", 7));
-        linkedList.add(new Alumno("Luis", 9));
+        linkedList.add(new Alumno("Luis", 3));
         linkedList.add(new Alumno("Jano", 3));
-        linkedList.add(new Alumno("Zeus", 3));
+        linkedList.add(new Alumno("Zeus", 5));
 
         System.out.println(linkedList + ", size = " + linkedList.size());
 
@@ -54,9 +55,21 @@ public class EjemploLinkedList {
         System.out.println(linkedList + ", size = " + linkedList.size());
         System.out.println("Indice de lucas = " + linkedList.indexOf(a));
 
-        linkedList.set(3, new Alumno("Arnaldo",7));
+        linkedList.set(3, new Alumno("Arnaldo",5));
 
         System.out.println(linkedList + ", size = " + linkedList.size());
+
+        ListIterator<Alumno> listIterator = linkedList.listIterator();
+
+        while (listIterator.hasNext()){
+            Alumno alumno = listIterator.next();
+            System.out.println(alumno);
+        }
+        System.out.println("============================== previous");
+        while (listIterator.hasPrevious()){
+            Alumno alumno = listIterator.previous();
+            System.out.println(alumno);
+        }
 
     }
 }
