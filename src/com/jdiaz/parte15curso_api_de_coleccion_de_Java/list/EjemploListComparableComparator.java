@@ -1,4 +1,4 @@
-package com.jdiaz.parte15curso_api_de_coleccion_de_Java.set;
+package com.jdiaz.parte15curso_api_de_coleccion_de_Java.list;
 
 import com.jdiaz.parte15curso_api_de_coleccion_de_Java.modelo.Alumno;
 
