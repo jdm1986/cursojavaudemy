@@ -37,11 +37,11 @@ public class Alumno implements Comparable<Alumno> {
 
     @Override
     public int compareTo(Alumno a) {
-        /*if(this.nombre == null){
+        if(this.nombre == null){
             return 0;
         }
         return this.nombre.compareTo(a.nombre);
-    }*/
+    }
         /*if (this.nota == a.nota) {
             return 0;
         } else if (this.nota > a.nota) {
@@ -49,11 +49,11 @@ public class Alumno implements Comparable<Alumno> {
         } else {
             return -1;
         }*/
-        if (this.nota == null){
+        /*if (this.nota == null){
             return 0;
         }
         return this.nota.compareTo(a.nota);
-    }
+    }*/
 
     @Override
     public boolean equals(Object o) {
