@@ -1,17 +1,17 @@
 package com.jdiaz.parte15curso_api_de_coleccion_de_Java.map;
 
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
 
 public class EjemploHashMap {
     public static void main(String[] args) {
 
         Map<String,String> persona = new HashMap<>();
+        System.out.println("contiene elementos = " + !persona.isEmpty());
 
         persona.put(null,"1234" );
         persona.put("nombre","John");
         persona.put("apellido","Doe");
-        persona.put("apellidoPaterno","Doe"); // lo que no puede estar repetido es la clave.
+        persona.put("apellidoPaterno","Miliano"); // lo que no puede estar repetido es la clave.
         persona.put("email","jonh.doe@email.com");
         persona.put("edad","30");
 
@@ -22,5 +22,53 @@ public class EjemploHashMap {
         String apellido = persona.get("apellido");
         System.out.println("apellido = " + apellido);
 
+        //String valorApellido = persona.remove("apellidoPaterno"); ---- Se puede eliminar siendo Tipo String solo mediante la clave.
+        boolean valorApellido = persona.remove("apellidoPaterno","Miliano");
+        System.out.println("eliminado " + valorApellido);
+        System.out.println("persona = " + persona);
+
+        boolean b2 = persona.containsKey("apellido");
+        System.out.println("b2 = " + b2);
+
+        boolean b3 = persona.containsValue("jonh.doe@email.com");
+        System.out.println("b3 = " + b3);
+
+        Collection<String> valores = persona.values();
+        System.out.println("========================================================== values");
+        for (String valor : valores) {
+            System.out.println("valor = " + valor);
+        }
+        System.out.println("========================================================== key set");
+        Set<String> llaves = persona.keySet();
+        for (String llave : llaves) {
+            System.out.println("llave = " + llave);
+        }
+        System.out.println("========================================================== entrySet");
+        for (Map.Entry<String,String> par: persona.entrySet()){
+            System.out.println("par.getKey() + \" => \" + par.getValue() = " + par.getKey() + " => " + par.getValue());
+        }
+        System.out.println("");
+
+        System.out.println("========================================================== keySet");
+        System.out.println("");
+
+        for (String llave : persona.keySet()) {
+            String valor = persona.get(llave);
+            System.out.println("llave + \" => \" + valor = " + llave + " => " + valor);
+        }
+        System.out.println("========================================================== java8Foreach");
+
+        persona.forEach((llave, valor) -> System.out.println("llave + \" => \" + valor = " + llave + " => " + valor));
+
+        System.out.println("==========================================================");
+
+        System.out.println("total: " + persona.size());
+        System.out.println("contiene elementos = " + !persona.isEmpty());
+
+        System.out.println("========================================================== Remplazar valor");
+
+        boolean b4 = persona.replace("nombre","John","Andrés");
+        System.out.println("b4 = " + b4);
+        System.out.println("persona = " + persona);
     }
 }
