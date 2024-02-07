@@ -1,5 +1,7 @@
 package com.jdiaz.parte18curso_api_stream.ejemplos;
 
+import com.jdiaz.parte18curso_api_stream.ejemplos.models.Usuario;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -8,18 +10,17 @@ import java.util.stream.Stream;
 public class EjemploStreamMap {
     public static void main(String[] args) {
 
-        Stream<String> nombres = Stream
-                .of("Pato", "Paco", "Pepa", "Pepe")
-                .map(String::toUpperCase)
-                .peek(System.out::println) //el inspeccionador del Stream hasta aquí lo deja en Mayúscula
-                .map(String::toLowerCase);
+        Stream<Usuario> nombres = Stream.of("Pato Gruzman","Paco Gonzalez","Pepa Flores","Pepe Mena")
+                .map(nombre -> new Usuario(nombre.split(" ")[0],nombre.split(" ")[1]))
+                .peek(System.out::println)
+                .map(usuario -> {
+                   String nombre = usuario.getNombre().toUpperCase();
+                   usuario.setNombre(nombre);
+                   return usuario;
+                });
 
-        List<String> listaDeNombres = nombres.collect(Collectors.toList()); // luego convertimos el stream en una lista a través del método collect y al recorrerlo muestra en minúscula.
-        listaDeNombres.forEach(System.out::println);
-        //nombres.forEach(System.out::println);
-
-
-
+        List<Usuario> lista = nombres.collect(Collectors.toList());
+        lista.forEach(System.out::println);
 
     }
 }
