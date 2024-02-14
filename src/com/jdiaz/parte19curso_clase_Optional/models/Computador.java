@@ -1,9 +1,20 @@
 package com.jdiaz.parte19curso_clase_Optional.models;
 
+import java.util.Optional;
+
 public class Computador {
 
     private String nombre;
     private String modelo;
+    private Procesador procesador;
+
+    public Optional<Procesador> getProcesador() {
+        return Optional.ofNullable(procesador);
+    }
+
+    public void setProcesador(Procesador procesador) {
+        this.procesador = procesador;
+    }
 
     public Computador() {
     }

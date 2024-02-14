@@ -1,6 +1,8 @@
 package com.jdiaz.parte19curso_clase_Optional.repositorio;
 
 import com.jdiaz.parte19curso_clase_Optional.models.Computador;
+import com.jdiaz.parte19curso_clase_Optional.models.Fabricante;
+import com.jdiaz.parte19curso_clase_Optional.models.Procesador;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -12,7 +14,11 @@ public class ComputadorRepositorio implements Repositorio<Computador> {
 
     public ComputadorRepositorio() {
         dataSource = new ArrayList<>();
-        dataSource.add(new Computador("Asus Rog", "Strix 512"));
+        Procesador proc = new Procesador("I9-9980",new Fabricante("Intel"));
+        Computador asus = new Computador("Asus Rog", "Strix 512");
+        asus.setProcesador(proc);
+        dataSource.add(asus);
+
         dataSource.add(new Computador("Macbook Pro", "Mvb23"));
 
     }
