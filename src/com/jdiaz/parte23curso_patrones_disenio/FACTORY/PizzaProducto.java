@@ -38,4 +38,8 @@ public abstract class PizzaProducto {
                 ", ingredientes=" + ingredientes +
                 '}';
     }
+
+    public String getNombre() {
+        return nombre;
+    }
 }
