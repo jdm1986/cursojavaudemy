@@ -40,4 +40,18 @@ public class Directorio extends Componente {
         return stringBuilder.toString();
     }
 
+    @Override
+    public boolean buscar(String nombre) {
+        if(this.nombre.equalsIgnoreCase(nombre)){
+            return true;
+        }
+
+        /*for(Componente hijo:hijos){
+            if(hijo.buscar(nombre)){
+                return true;
+            }
+        }*/
+        return hijos.stream().anyMatch(h -> h.buscar(nombre)); //en una sola linea con el ApiStream en vez de con for.
+    }
+
 }
