@@ -1,4 +1,4 @@
-package com.jdiaz.parte24curso_patrones_disenio_DECORATOR;
+package com.jdiaz.parte24curso_patrones_disenio_DECORATOR.Ejmplo1_ALTERACIÓN_TEXTO;
 
 public class Texto implements Formateable{
 

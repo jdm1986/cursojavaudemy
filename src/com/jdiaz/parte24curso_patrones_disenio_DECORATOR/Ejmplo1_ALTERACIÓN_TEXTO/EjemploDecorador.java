@@ -1,9 +1,8 @@
-package com.jdiaz.parte24curso_patrones_disenio_DECORATOR;
+package com.jdiaz.parte24curso_patrones_disenio_DECORATOR.Ejmplo1_ALTERACIÓN_TEXTO;
 
-import com.jdiaz.parte24curso_patrones_disenio_DECORATOR.decorador.MayusculaDecorador;
-import com.jdiaz.parte24curso_patrones_disenio_DECORATOR.decorador.ReemplazarEspaciosDecorador;
-import com.jdiaz.parte24curso_patrones_disenio_DECORATOR.decorador.ReverseDecorador;
-import com.jdiaz.parte24curso_patrones_disenio_DECORATOR.decorador.SubrayadoDecorador;
+import com.jdiaz.parte24curso_patrones_disenio_DECORATOR.Ejmplo1_ALTERACIÓN_TEXTO.decorador.MayusculaDecorador;
+import com.jdiaz.parte24curso_patrones_disenio_DECORATOR.Ejmplo1_ALTERACIÓN_TEXTO.decorador.ReemplazarEspaciosDecorador;
+import com.jdiaz.parte24curso_patrones_disenio_DECORATOR.Ejmplo1_ALTERACIÓN_TEXTO.decorador.SubrayadoDecorador;
 
 public class EjemploDecorador {
     public static void main(String[] args) {
