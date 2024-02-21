@@ -12,6 +12,6 @@ public abstract class PizzeriaZonaAbstractFactory {
         return pizza;
     }
 
-    abstract PizzaProducto crearpizza(String tipo);
+    protected abstract PizzaProducto crearpizza(String tipo);
 
 }
