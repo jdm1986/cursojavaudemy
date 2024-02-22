@@ -1,6 +1,7 @@
 package com.jdiaz.parte27curso_manejo_de_archivos.servicio;
 
 import java.io.*;
+import java.util.Scanner;
 
 public class ArchivoServicio {
     public void crearArchivo(String nombre) {
@@ -39,4 +40,36 @@ public class ArchivoServicio {
             e.printStackTrace();
         }
     }
+
+    public String leerArchivo(String nombre) {
+        StringBuilder stringBuilder = new StringBuilder();
+        File archivo = new File(nombre);
+        try( BufferedReader reader = new BufferedReader(new FileReader(archivo))) {
+            String linea;
+            while ((linea = reader.readLine()) != null) {
+                stringBuilder.append(linea).append("\n");
+            }
+            reader.close();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+        return stringBuilder.toString();
+    }
+
+    public String leerArchivo2 (String nombre) {
+        StringBuilder stringBuilder = new StringBuilder();
+        File archivo = new File(nombre);
+        try (Scanner scanner = new Scanner(archivo)){
+            scanner.useDelimiter("\n");
+            while (scanner.hasNext()) {
+                stringBuilder.append(scanner.next()).append("\n");
+            }
+            scanner.close();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+        return stringBuilder.toString();
+    }
+
+    //cualquiera de las dos Formas e válida.
 }
