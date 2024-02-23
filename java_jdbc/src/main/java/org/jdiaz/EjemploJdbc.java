@@ -14,7 +14,7 @@ public class EjemploJdbc {
             ResultSet resultado = statement.executeQuery("SELECT * FROM productos");
 
             while (resultado.next()){
-                System.out.println(resultado.getString("nombre"));
+                System.out.println(resultado.getString("precio"));
             }
             resultado.close();
             statement.close();
