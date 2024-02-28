@@ -1,5 +1,8 @@
 package org.jdiaz;
 
+import org.jdiaz.modelo.Producto;
+import org.jdiaz.repositorio.ProductoRepositorioImpl;
+import org.jdiaz.repositorio.Repositorio;
 import org.jdiaz.util.ConexionBaseDatos;
 
 import java.sql.*;
@@ -10,21 +13,11 @@ public class EjemploJdbc {
 
         int incremento = 1;
 
-        try (Connection connection = ConexionBaseDatos.getInstance();
-             Statement statement = connection.createStatement();
-             ResultSet resultado = statement.executeQuery("SELECT * FROM productos")) {
+        try (Connection connection = ConexionBaseDatos.getInstance()) {
 
-            while (resultado.next()){
-                System.out.print(resultado.getString("nombre"));
-                System.out.print(" | ");
-                System.out.print(resultado.getInt("id"));
-                System.out.print(" | ");
-                System.out.print(resultado.getInt("precio"));
-                System.out.print(" | ");
-                System.out.print(resultado.getDate("fecha_registro"));
-                System.out.print(" | ");
-                System.out.println("registro " + incremento++);
-            }
+            Repositorio<Producto> repositorio = new ProductoRepositorioImpl();
+            repositorio.listar().forEach(producto -> System.out.println(producto.getNombre()));
+
 
         } catch (SQLException e) {
             e.printStackTrace();
