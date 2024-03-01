@@ -5,10 +5,10 @@ import org.jdiaz.repositorio.ProductoRepositorioImpl;
 import org.jdiaz.repositorio.Repositorio;
 import org.jdiaz.util.ConexionBaseDatos;
 
-import java.sql.*;
-import java.util.Date;
+import java.sql.Connection;
+import java.sql.SQLException;
 
-public class EjemploJdbc {
+public class EjemploJdbcDelete {
     public static void main(String[] args) {
 
 
@@ -23,16 +23,10 @@ public class EjemploJdbc {
             System.out.println("================== Ver por Id ================");
             System.out.println(repositorio.porId(2L));
 
-            System.out.println("================== Insertar Nuevo Producto ================");
-            Producto producto = new Producto();
-            producto.setNombre("Teclado mecánico");
-            producto.setPrecio(500);
-            producto.setFechaRegistro(new Date());
+            System.out.println("================== Eliminar Producto ================");
 
-            repositorio.guardar(producto);
-
-            System.out.println("Producto guardado con éxito");
-
+            repositorio.eliminar(3L);
+            System.out.println("Producto eliminado con éxito");
             System.out.println("================== Listar ================");
             repositorio.listar().forEach(System.out::println);
 
