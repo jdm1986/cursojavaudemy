@@ -1,5 +1,6 @@
 package org.jdiaz;
 
+import org.jdiaz.modelo.Categoria;
 import org.jdiaz.modelo.Producto;
 import org.jdiaz.repositorio.ProductoRepositorioImpl;
 import org.jdiaz.repositorio.Repositorio;
@@ -21,13 +22,17 @@ public class EjemploJdbc {
             repositorio.listar().forEach(System.out::println);
 
             System.out.println("================== Ver por Id ================");
-            System.out.println(repositorio.porId(2L));
+            System.out.println(repositorio.porId(1L));
 
             System.out.println("================== Insertar Nuevo Producto ================");
             Producto producto = new Producto();
-            producto.setNombre("Teclado mecánico");
-            producto.setPrecio(500);
+            producto.setNombre("Teclado Rizer mecánico");
+            producto.setPrecio(550);
+
             producto.setFechaRegistro(new Date());
+            Categoria categoria = new Categoria();
+            categoria.setId(3L);
+            producto.setCategoria(categoria);
 
             repositorio.guardar(producto);
 

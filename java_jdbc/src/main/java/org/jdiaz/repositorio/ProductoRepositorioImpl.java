@@ -1,5 +1,6 @@
 package org.jdiaz.repositorio;
 
+import org.jdiaz.modelo.Categoria;
 import org.jdiaz.modelo.Producto;
 import org.jdiaz.util.ConexionBaseDatos;
 
@@ -18,7 +19,8 @@ public class ProductoRepositorioImpl implements Repositorio<Producto> {
         List<Producto> productos = new ArrayList<>();
 
         try (Statement statement = getConnection().createStatement();
-             ResultSet resultSet = statement.executeQuery("SELECT * FROM productos")) {
+             ResultSet resultSet = statement.executeQuery("SELECT p.*, c.nombre as categoria " +
+                     "FROM productos as p inner join categorias as c ON (p.categoria_id = c.id)")) {
 
             while (resultSet.next()) {
                 Producto p = crearProducto(resultSet);
@@ -36,7 +38,8 @@ public class ProductoRepositorioImpl implements Repositorio<Producto> {
     @Override
     public Producto porId(Long id) {
         Producto producto = null;
-        try (PreparedStatement statement = getConnection().prepareStatement("SELECT * FROM productos WHERE id = ?")) {
+        try (PreparedStatement statement = getConnection().prepareStatement("SELECT p.*, c.nombre as categoria " +
+                "FROM productos as p inner join categorias as c ON (p.categoria_id = c.id) WHERE p.id = ?")) {
             statement.setLong(1, id);
             try (ResultSet resultSet = statement.executeQuery()) {
                 if (resultSet.next()) {
@@ -54,18 +57,19 @@ public class ProductoRepositorioImpl implements Repositorio<Producto> {
 
         String sql;
         if (producto.getId() != null && producto.getId() > 0) {
-            sql = "UPDATE productos SET nombre =?, precio=? WHERE id=?";
+            sql = "UPDATE productos SET nombre =?, precio=?, categoria_id=? WHERE id=?";
         } else {
-            sql = "INSERT INTO productos (nombre, precio, fecha_registro) VALUES(?,?,?)";
+            sql = "INSERT INTO productos (nombre, precio, categoria_id, fecha_registro) VALUES(?,?,?,?)";
         }
         try (PreparedStatement statement = getConnection().prepareStatement(sql)){
             statement.setString(1, producto.getNombre());
             statement.setLong(2,producto.getPrecio());
+            statement.setLong(3,producto.getCategoria().getId());
 
             if (producto.getId() != null && producto.getId() > 0) {
-                statement.setLong(3,producto.getId());
+                statement.setLong(4,producto.getId());
             } else {
-                statement.setDate(3, new Date(producto.getFechaRegistro().getTime()));
+                statement.setDate(4, new Date(producto.getFechaRegistro().getTime()));
             }
 
             statement.executeUpdate();
@@ -92,6 +96,10 @@ public class ProductoRepositorioImpl implements Repositorio<Producto> {
         p.setNombre(resultSet.getString("nombre"));
         p.setPrecio(resultSet.getInt("precio"));
         p.setFechaRegistro(resultSet.getDate("fecha_registro"));
+        Categoria categoria = new Categoria();
+        categoria.setId(resultSet.getLong("categoria_id"));
+        categoria.setNombre(resultSet.getString("categoria"));
+        p.setCategoria(categoria);
         return p;
     }
 }
