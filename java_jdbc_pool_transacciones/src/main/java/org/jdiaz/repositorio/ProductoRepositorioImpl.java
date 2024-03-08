@@ -2,7 +2,6 @@ package org.jdiaz.repositorio;
 
 import org.jdiaz.modelo.Categoria;
 import org.jdiaz.modelo.Producto;
-import org.jdiaz.util.ConexionBaseDatos;
 
 import java.sql.*;
 import java.util.ArrayList;
@@ -10,15 +9,17 @@ import java.util.List;
 
 public class ProductoRepositorioImpl implements Repositorio<Producto> {
 
-    private Connection getConnection() throws SQLException {
-        return ConexionBaseDatos.getInstance();
+    private Connection conn;
+
+    public ProductoRepositorioImpl(Connection conn) {
+        this.conn = conn;
     }
 
     @Override
     public List<Producto> listar() throws SQLException {
         List<Producto> productos = new ArrayList<>();
 
-        try (Statement statement = getConnection().createStatement();
+        try (Statement statement = conn.createStatement();
              ResultSet resultSet = statement.executeQuery("SELECT p.*, c.nombre as categoria " +
                      "FROM productos as p inner join categorias as c ON (p.categoria_id = c.id)")) {
 
@@ -32,10 +33,11 @@ public class ProductoRepositorioImpl implements Repositorio<Producto> {
     }
 
 
+
     @Override
     public Producto porId(Long id) throws SQLException {
         Producto producto = null;
-        try (PreparedStatement statement = getConnection().prepareStatement("SELECT p.*, c.nombre as categoria " +
+        try (PreparedStatement statement = conn.prepareStatement("SELECT p.*, c.nombre as categoria " +
                 "FROM productos as p inner join categorias as c ON (p.categoria_id = c.id) WHERE p.id = ?")) {
             statement.setLong(1, id);
             try (ResultSet resultSet = statement.executeQuery()) {
@@ -48,7 +50,7 @@ public class ProductoRepositorioImpl implements Repositorio<Producto> {
     }
 
     @Override
-    public void guardar(Producto producto) throws SQLException {
+    public Producto guardar(Producto producto) throws SQLException {
 
         String sql;
         if (producto.getId() != null && producto.getId() > 0) {
@@ -56,19 +58,30 @@ public class ProductoRepositorioImpl implements Repositorio<Producto> {
         } else {
             sql = "INSERT INTO productos (nombre, precio, categoria_id, sku, fecha_registro) VALUES(?,?,?,?,?)";
         }
-        try (PreparedStatement statement = getConnection().prepareStatement(sql)) {
+        try (PreparedStatement statement = conn.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS)){
             statement.setString(1, producto.getNombre());
-            statement.setLong(2, producto.getPrecio());
-            statement.setLong(3, producto.getCategoria().getId());
-            statement.setString(4, producto.getSku());
+            statement.setLong(2,producto.getPrecio());
+            statement.setLong(3,producto.getCategoria().getId());
+            statement.setString(4,producto.getSku());
 
             if (producto.getId() != null && producto.getId() > 0) {
-                statement.setLong(5, producto.getId());
+                statement.setLong(5,producto.getId());
             } else {
                 statement.setDate(5, new Date(producto.getFechaRegistro().getTime()));
             }
 
             statement.executeUpdate();
+
+            if(producto.getId() == null){
+                try (ResultSet resultSet = statement.getGeneratedKeys()){
+                    if(resultSet.next()){
+                        producto.setId(resultSet.getLong(1));
+
+                    }
+                }
+            }
+
+            return producto;
         }
 
     }
@@ -76,13 +89,12 @@ public class ProductoRepositorioImpl implements Repositorio<Producto> {
     @Override
     public void eliminar(Long id) throws SQLException {
 
-        try (PreparedStatement statement = getConnection().prepareStatement("DELETE FROM productos WHERE id =?")) {
-            statement.setLong(1, id);
+        try (PreparedStatement statement = conn.prepareStatement("DELETE FROM productos WHERE id =?")){
+            statement.setLong(1,id);
             statement.executeUpdate();
         }
 
     }
-
     private static Producto crearProducto(ResultSet resultSet) throws SQLException {
         Producto p = new Producto();
         p.setId(resultSet.getLong("id"));
